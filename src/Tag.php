@@ -740,7 +740,7 @@ class Tag extends TagStatic implements Renderable, \ArrayAccess
      * @return bool true on success or false on failure.
      * @since 5.0.0
      */
-    public function offsetExists($offset)
+    public function offsetExists($offset): bool
     {
         return isset($this->{$offset});
     }
@@ -753,7 +753,7 @@ class Tag extends TagStatic implements Renderable, \ArrayAccess
      * @return mixed Can return all value types.
      * @since 5.0.0
      */
-    public function offsetGet($offset)
+    public function offsetGet($offset): mixed
     {
         return $this->{$offset};
     }
@@ -767,7 +767,7 @@ class Tag extends TagStatic implements Renderable, \ArrayAccess
      * @return void
      * @since 5.0.0
      */
-    public function offsetSet($offset, $value)
+    public function offsetSet($offset, $value): void
     {
         $this->{$offset} = $value;
     }
@@ -780,7 +780,7 @@ class Tag extends TagStatic implements Renderable, \ArrayAccess
      * @return void
      * @since 5.0.0
      */
-    public function offsetUnset($offset)
+    public function offsetUnset($offset): void
     {
     }
 
