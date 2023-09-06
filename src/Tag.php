@@ -306,6 +306,16 @@ class Tag extends TagStatic implements Renderable, \ArrayAccess
     }
 
     /**
+     * @return $this
+     */
+//    public function vue()
+//    {
+//        $this->attributes = (new VueAttributeCollectionArea())->setTag($this);
+//
+//        return $this;
+//    }
+
+    /**
      * Magic static.
      *
      * @param $name
