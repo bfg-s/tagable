@@ -8,6 +8,7 @@ use Lar\Layout\Respond;
 use Lar\LJS\LJS;
 use Lar\Tagable\Core\ContentCollectionArea;
 use Lar\Tagable\Tag;
+use Lar\Tagable\Vue;
 
 /**
  * Trait SetterMethods.
@@ -842,6 +843,25 @@ trait SetterMethods
         $this->appEnd(
             view($path, $data, $mergeData)
         );
+
+        return $this;
+    }
+
+    /**
+     * @param  string  $class
+     * @param  array  $parameters
+     * @return $this
+     */
+    public function vue(string $class, array $parameters = [])
+    {
+        $classInstance = new $class;
+
+        if ($classInstance instanceof Vue) {
+
+            $this->appEnd(
+                $classInstance::create($parameters)
+            );
+        }
 
         return $this;
     }
